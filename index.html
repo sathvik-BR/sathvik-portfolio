@@ -14,14 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#080A0F; --panel:#0E121A; --panel2:#131925; --line:#1E2633;
-  --text:#E8ECF3; --muted:#8892A5; --film:#A8CBFF;
-  --hot:#FF5A36; --warm:#FFD166; --cool:#3DDBB0;
-  --serif:'Instrument Serif',Georgia,serif;
-  --sans:'Geist',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --mono:'Geist Mono',ui-monospace,Menlo,monospace;
-}
+:root{--ink:#080A0F;--panel:#0E121A;--panel2:#131925;--line:#1E2633;--text:#E8ECF3;--muted:#8892A5;--film:#A8CBFF;--hot:#FF5A36;--warm:#FFD166;--cool:#3DDBB0;--serif:'Instrument Serif',Georgia,serif;--sans:'Geist',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'Geist Mono',ui-monospace,Menlo,monospace}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--ink);color:var(--text);font:400 16px/1.7 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -31,8 +24,6 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
 @media(max-width:700px){.wrap{padding:0 20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-
-/* nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(16px);background:rgba(8,10,15,.7);border-bottom:1px solid var(--line)}
 .nav-in{max-width:1160px;margin:0 auto;padding:16px 32px;display:flex;justify-content:space-between;align-items:center}
 .logo{font-family:var(--serif);font-size:24px;letter-spacing:.01em}
@@ -41,12 +32,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(16px);ba
 .nav-cta{font-size:13px;font-weight:500;padding:9px 18px;border-radius:99px;border:1px solid var(--line);background:var(--panel);transition:border-color .2s}
 .nav-cta:hover{border-color:var(--film)}
 @media(max-width:760px){.nav-links{display:none}.nav-in{padding:14px 20px}}
-
-/* hero — the cursor paints a Grad-CAM style activation map */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;--x:68%;--y:42%}
 .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(168,203,255,.16) 1px,transparent 1.2px);background-size:26px 26px;mask-image:radial-gradient(ellipse at 60% 45%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 60% 45%,#000 20%,transparent 75%)}
-.cam{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;
-  background:radial-gradient(circle 360px at var(--x) var(--y),rgba(255,90,54,.55) 0,rgba(255,209,102,.38) 14%,rgba(61,219,176,.22) 30%,rgba(60,90,255,.14) 48%,transparent 70%);transition:opacity .4s}
+.cam{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(circle 360px at var(--x) var(--y),rgba(255,90,54,.55) 0,rgba(255,209,102,.38) 14%,rgba(61,219,176,.22) 30%,rgba(60,90,255,.14) 48%,transparent 70%);transition:opacity .4s}
 .hero-in{position:relative;z-index:1;padding:130px 0 90px;width:100%}
 .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,8.6vw,118px);line-height:.96;letter-spacing:-.02em;max-width:920px}
 .hero h1 i{color:var(--film)}
@@ -60,21 +48,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(16px);ba
 .hero-note{position:absolute;right:32px;bottom:34px;z-index:1;font:400 12px var(--mono);color:var(--muted);text-align:right}
 .hero-note span{color:var(--warm)}
 @media(max-width:700px){.hero-note{display:none}}
-
-/* ticker */
 .ticker{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:18px 0}
 .ticker div{display:inline-flex;animation:tick 40s linear infinite}
 .ticker span{font:400 13px var(--mono);color:var(--muted);padding:0 26px}
 .ticker span::after{content:"/";margin-left:52px;color:var(--hot)}
 @keyframes tick{to{transform:translateX(-50%)}}
-
 section{padding:120px 0}
 @media(max-width:700px){section{padding:80px 0}}
 h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,60px);line-height:1.05;letter-spacing:-.015em;max-width:720px}
 .lead{color:var(--muted);margin-top:16px;max-width:560px}
 .head{margin-bottom:56px}
-
-/* about */
 .about{display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:start}
 @media(max-width:820px){.about{grid-template-columns:1fr;gap:40px}}
 .about p{color:var(--muted);font-size:17px;margin-bottom:18px}
@@ -83,12 +66,9 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,60px);line-
 .facts div{display:flex;justify-content:space-between;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);font-size:14.5px}
 .facts div:last-child{border:0}
 .facts dt{color:var(--muted)}.facts dd{text-align:right}
-
-/* project cards with cursor spotlight edge */
 .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
 .card{position:relative;border-radius:24px;background:var(--panel);border:1px solid var(--line);padding:34px;overflow:hidden;grid-column:span 2;transition:transform .35s cubic-bezier(.16,1,.3,1)}
-.card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
-  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,209,102,.1),transparent 60%)}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,209,102,.1),transparent 60%)}
 .card:hover{transform:translateY(-4px);border-color:#2B3647}
 .card:hover::before{opacity:1}
 .card.big{grid-column:span 6;display:grid;grid-template-columns:1.1fr 1fr;gap:44px;padding:44px}
@@ -101,22 +81,27 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,60px);line-
 .card ul{list-style:none}
 .card li{position:relative;padding-left:20px;color:var(--muted);font-size:15px;margin-bottom:11px}
 .card li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:1px;background:var(--hot)}
-.link{display:inline-block;margin-top:14px;font-size:14px;font-weight:500;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s,color .2s}
+.link{display:inline-block;margin:14px 18px 0 0;font-size:14px;font-weight:500;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s,color .2s}
 .link:hover{border-color:var(--warm);color:var(--warm)}
 .metrics{display:flex;gap:34px;margin:26px 0 8px;flex-wrap:wrap}
 .metrics b{display:block;font:400 clamp(38px,4.4vw,56px)/1 var(--serif)}
 .metrics small{font:400 12px var(--mono);color:var(--muted)}
-
-/* Grad-CAM visual */
 .xray{position:relative;min-height:340px;border-radius:18px;background:#05070B;border:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center}
 .xray svg{width:100%;height:100%;max-height:380px}
-.xray .cap{position:absolute;left:16px;bottom:12px;font:400 11.5px var(--mono);color:var(--muted)}
-.xray .cap b{color:var(--warm);font-weight:500}
+.xray .cap,.viz .cap{position:absolute;left:16px;bottom:10px;font:400 11.5px var(--mono);color:var(--muted)}
+.xray .cap b,.viz .cap b{color:var(--warm);font-weight:500}
+.viz{position:relative;border-radius:16px;background:#05070B;border:1px solid var(--line);overflow:hidden;margin-bottom:24px}
+.viz svg{display:block;width:100%;height:auto}
+.viz .cap{left:14px;bottom:8px;font-size:11px}
+.o{fill:none;stroke:#A8CBFF;stroke-opacity:.5;stroke-width:1.5}
+.p{fill:#0F1520;stroke:#A8CBFF;stroke-opacity:.5;stroke-width:1.5}
+.d{fill:rgba(255,90,54,.1);stroke:var(--hot);stroke-width:1.5;stroke-dasharray:5 3}
+.k{fill:none;stroke:var(--cool);stroke-width:1.5;stroke-opacity:.8}
+.t{font:10px var(--mono);fill:#8892A5}
+.tw{font:10px var(--mono);fill:var(--warm)}
 .blob{animation:breathe 5s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
 .blob.b2{animation-delay:-2.2s}
 @keyframes breathe{50%{opacity:.55;transform:scale(1.12)}}
-
-/* stack */
 .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 @media(max-width:820px){.skills{grid-template-columns:1fr}}
 .sk{border:1px solid var(--line);border-radius:22px;background:var(--panel);padding:28px}
@@ -124,16 +109,12 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,60px);line-
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips span{font-size:13.5px;padding:7px 14px;border-radius:99px;border:1px solid var(--line);color:var(--muted);transition:all .2s}
 .chips span:hover{color:var(--text);border-color:var(--film);background:var(--panel2)}
-
-/* credentials */
 .cred{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 @media(max-width:820px){.cred{grid-template-columns:1fr}}
 .row{padding:20px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:baseline}
 .row:first-of-type{border-top:1px solid var(--line)}
 .row b{font-weight:500}.row small{font:400 12.5px var(--mono);color:var(--muted);white-space:nowrap}
 .cred h3{font-family:var(--serif);font-weight:400;font-size:28px;margin-bottom:18px}
-
-/* contact */
 .contact{border:1px solid var(--line);border-radius:32px;padding:84px 40px;text-align:center;position:relative;overflow:hidden;background:var(--panel)}
 .contact::before{content:"";position:absolute;left:50%;top:-40%;width:640px;height:440px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(255,90,54,.28),rgba(255,209,102,.12) 55%,transparent);pointer-events:none}
 .contact>*{position:relative}
@@ -145,16 +126,12 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,60px);line-
 .copy{background:none;border:1px solid var(--line);border-radius:99px;color:var(--muted);font:400 11px var(--mono);padding:4px 10px;margin-left:8px;cursor:pointer}
 .copy:hover{border-color:var(--film);color:var(--film)}
 footer{padding:36px 0 56px;text-align:center;font:400 12px var(--mono);color:#566074}
-
-/* resume modal */
 .modal{position:fixed;inset:0;z-index:100;background:rgba(4,5,8,.8);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
 .modal.open{opacity:1;pointer-events:all}
 .mbox{width:min(900px,94vw);height:min(90vh,940px);border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--panel);position:relative;transform:scale(.96);transition:transform .3s}
 .modal.open .mbox{transform:scale(1)}
 .mbox iframe{width:100%;height:100%;border:0}
 .x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--text);cursor:pointer;z-index:2}
-
-/* one-time page load reveal for the hero only; sections reveal as they enter */
 .hero-in>*{opacity:0;transform:translateY(24px);animation:up .9s cubic-bezier(.16,1,.3,1) forwards}
 .hero-in>*:nth-child(2){animation-delay:.12s}.hero-in>*:nth-child(3){animation-delay:.24s}
 @keyframes up{to{opacity:1;transform:none}}
@@ -213,7 +190,7 @@ footer{padding:36px 0 56px;text-align:center;font:400 12px var(--mono);color:#56
 </div></section>
 
 <section id="work" style="padding-top:0"><div class="wrap">
-  <div class="head rv"><h2>Four projects, each shipped as a working system.</h2><p class="lead">Every one runs end to end: data, training, evaluation and an interface you can use.</p></div>
+  <div class="head rv"><h2>Six projects, each built end to end.</h2><p class="lead">Computer vision, real-time detection, RAG and NLP, each with a working interface.</p></div>
   <div class="grid">
 
     <article class="card big rv">
@@ -235,9 +212,7 @@ footer{padding:36px 0 56px;text-align:center;font:400 12px var(--mono);color:#56
       </div>
       <div class="xray" aria-label="Illustration of a Grad-CAM heatmap over a chest X-ray">
         <svg viewBox="0 0 400 360" fill="none">
-          <defs>
-            <radialGradient id="h"><stop offset="0" stop-color="#FF5A36" stop-opacity=".95"/><stop offset=".35" stop-color="#FFD166" stop-opacity=".6"/><stop offset=".7" stop-color="#3DDBB0" stop-opacity=".25"/><stop offset="1" stop-color="#3C5AFF" stop-opacity="0"/></radialGradient>
-          </defs>
+          <defs><radialGradient id="h"><stop offset="0" stop-color="#FF5A36" stop-opacity=".95"/><stop offset=".35" stop-color="#FFD166" stop-opacity=".6"/><stop offset=".7" stop-color="#3DDBB0" stop-opacity=".25"/><stop offset="1" stop-color="#3C5AFF" stop-opacity="0"/></radialGradient></defs>
           <path d="M200 40v250" stroke="#1E2633" stroke-width="10" stroke-linecap="round"/>
           <g stroke="#1E2633" stroke-width="3" stroke-linecap="round" opacity=".9">
             <path d="M200 90q-70 -16 -110 18M200 120q-76 -10 -118 28M200 150q-80 -4 -124 36M200 180q-80 4 -122 44"/>
@@ -253,6 +228,18 @@ footer{padding:36px 0 56px;text-align:center;font:400 12px var(--mono);color:#56
     </article>
 
     <article class="card wide rv">
+      <div class="viz" aria-label="Illustration of YOLOv8 bounding boxes on a camera frame">
+        <svg viewBox="0 0 400 180">
+          <rect class="p" x="12" y="12" width="376" height="156" rx="10"/>
+          <path class="o" d="M12 128h376"/>
+          <rect class="p" x="72" y="92" width="48" height="36"/><rect class="p" x="130" y="104" width="30" height="24"/><circle class="p" cx="108" cy="86" r="10"/>
+          <rect class="p" x="262" y="96" width="42" height="32"/><rect class="p" x="312" y="108" width="34" height="20"/>
+          <rect class="d" x="62" y="72" width="108" height="62" rx="3"/><text class="tw" x="64" y="67">dumping</text>
+          <rect class="d" x="254" y="82" width="100" height="52" rx="3"/><text class="tw" x="256" y="77">dumping</text>
+          <circle class="blob" cx="364" cy="30" r="5" fill="#FF5A36"/><text class="t" x="316" y="34">LIVE</text>
+        </svg>
+        <span class="cap">YOLOv8 detection · illustration</span>
+      </div>
       <span class="tag">Real-time</span>
       <h3>Edge AI waste dumping detection</h3>
       <p class="stack">Python · YOLOv8 · Flask · Flask-SocketIO · OpenCV · SQLite · Chart.js · pytest</p>
@@ -264,18 +251,89 @@ footer{padding:36px 0 56px;text-align:center;font:400 12px var(--mono);color:#56
     </article>
 
     <article class="card wide rv">
+      <div class="viz" aria-label="Diagram of the RAG pipeline: PDF, chunks, FAISS vectors, LLM, answer">
+        <svg viewBox="0 0 400 180">
+          <path class="o" d="M70 80h20M150 80h20M230 80h20M310 80h20"/>
+          <rect class="p" x="10" y="52" width="60" height="56" rx="8"/><rect class="p" x="90" y="52" width="60" height="56" rx="8"/><rect class="p" x="170" y="52" width="60" height="56" rx="8"/><rect class="p" x="250" y="52" width="60" height="56" rx="8"/><rect class="p" x="330" y="52" width="60" height="56" rx="8"/>
+          <path class="o" d="M26 68h28M26 78h28M26 88h20"/>
+          <rect class="o" x="102" y="64" width="36" height="8"/><rect class="d" x="102" y="76" width="36" height="8"/><rect class="o" x="102" y="88" width="36" height="8"/>
+          <circle cx="186" cy="72" r="3" fill="#3DDBB0"/><circle cx="206" cy="90" r="3" fill="#3DDBB0"/><circle cx="198" cy="64" r="3" fill="#FFD166"/><circle cx="214" cy="78" r="3" fill="#3DDBB0"/><circle cx="184" cy="94" r="3" fill="#3DDBB0"/>
+          <circle class="blob" cx="280" cy="80" r="12" fill="#FF5A36" fill-opacity=".75"/>
+          <path class="k" d="M342 72h36M342 82h36M342 92h24"/>
+          <text class="t" x="24" y="128">PDF</text><text class="t" x="96" y="128">chunks</text><text class="t" x="176" y="128">FAISS</text><text class="t" x="266" y="128">LLM</text><text class="t" x="340" y="128">answer</text>
+        </svg>
+        <span class="cap">Retrieval-Augmented Generation · pipeline</span>
+      </div>
       <span class="tag">RAG</span>
       <h3>AI Knowledge Workspace</h3>
       <p class="stack">Python · Streamlit · LangChain · FAISS · HuggingFace Embeddings · Groq API</p>
       <ul>
-        <li>Upload PDFs and ask questions in natural language, answered by a RAG pipeline with semantic search and vector embeddings.</li>
-        <li>Includes document summaries and AI-generated flashcards on the same retrieval pipeline.</li>
+        <li>Chat with one or more PDFs in natural language, answered by a RAG pipeline over FAISS vector search.</li>
+        <li>Also does semantic search, document summaries, AI-generated study flashcards and downloadable answers.</li>
       </ul>
-      <a class="link" href="https://github.com/sathvik-BR" target="_blank" rel="noopener">View on GitHub ↗</a>
+      <a class="link" href="https://ai-knowledge-workspace-2nm6jeycwgdgk3u92fzvnm.streamlit.app/" target="_blank" rel="noopener">Live demo ↗</a>
+      <a class="link" href="https://github.com/sathvik-BR/ai-knowledge-workspace" target="_blank" rel="noopener">GitHub ↗</a>
+    </article>
+
+    <article class="card wide rv">
+      <div class="viz" aria-label="Diagram of resume and job description compared with TF-IDF and cosine similarity into a match score">
+        <svg viewBox="0 0 400 180">
+          <rect class="p" x="20" y="22" width="64" height="62" rx="6"/><path class="o" d="M32 38h40M32 50h40M32 62h28"/><text class="t" x="28" y="98">resume</text>
+          <rect class="p" x="20" y="108" width="64" height="48" rx="6"/><path class="o" d="M32 124h40M32 136h28"/><text class="t" x="16" y="170">job desc</text>
+          <path class="o" d="M84 56l56 28M84 130l56-40"/>
+          <circle class="p" cx="170" cy="90" r="30"/><text class="t" x="153" y="87">TF-IDF</text><text class="t" x="151" y="99">+ cosine</text>
+          <path class="o" d="M200 90h50"/>
+          <circle class="o" cx="310" cy="90" r="38" stroke-opacity=".25"/>
+          <circle class="blob" cx="310" cy="90" r="38" fill="none" stroke="#3DDBB0" stroke-width="6" stroke-linecap="round" stroke-dasharray="168 240" transform="rotate(-90 310 90)"/>
+          <text class="tw" x="285" y="94">match score</text>
+        </svg>
+        <span class="cap">Resume vs job description · similarity</span>
+      </div>
+      <span class="tag">NLP</span>
+      <h3>AI Resume Analyzer</h3>
+      <p class="stack">Python · Scikit-learn · TF-IDF · Cosine similarity · PyPDF2 · Plotly · Streamlit</p>
+      <ul>
+        <li>Compares a PDF resume against a job description with TF-IDF vectors and cosine similarity to produce a match score.</li>
+        <li>Lists missing skills, skill coverage and job-fit level on an interactive dashboard, with a downloadable report.</li>
+      </ul>
+      <a class="link" href="https://ai-resume-analyzer-vm9ibyfmcntsycyo8h2fsi.streamlit.app/" target="_blank" rel="noopener">Live demo ↗</a>
+      <a class="link" href="https://github.com/sathvik-BR/ai-resume-analyzer" target="_blank" rel="noopener">GitHub ↗</a>
+    </article>
+
+    <article class="card wide rv">
+      <div class="viz" aria-label="Illustration of a chosen movie linked to its most similar neighbours">
+        <svg viewBox="0 0 400 180">
+          <g fill="#8892A5" fill-opacity=".55"><circle cx="40" cy="40" r="4"/><circle cx="90" cy="140" r="4"/><circle cx="350" cy="36" r="4"/><circle cx="370" cy="130" r="4"/><circle cx="300" cy="150" r="4"/><circle cx="60" cy="90" r="4"/><circle cx="150" cy="30" r="4"/><circle cx="240" cy="160" r="4"/></g>
+          <path class="k" d="M200 90L150 60M200 90L250 62M200 90L238 128M200 90L162 124"/>
+          <circle class="blob" cx="200" cy="90" r="22" fill="#FF5A36" fill-opacity=".35"/><circle cx="200" cy="90" r="8" fill="#FFD166"/>
+          <g fill="#3DDBB0"><circle cx="150" cy="60" r="5"/><circle cx="250" cy="62" r="5"/><circle cx="238" cy="128" r="5"/><circle cx="162" cy="124" r="5"/></g>
+          <text class="tw" x="172" y="124">your pick</text>
+        </svg>
+        <span class="cap">Nearest movies by cosine similarity</span>
+      </div>
+      <span class="tag">Recommender</span>
+      <h3>Movie Recommendation System</h3>
+      <p class="stack">Python · Pandas · Scikit-learn · Cosine similarity · Streamlit</p>
+      <ul>
+        <li>Content-based recommender built on the TMDB 5000 movie dataset that suggests movies by similarity using cosine similarity.</li>
+        <li>Served through an interactive Streamlit web interface.</li>
+      </ul>
+      <a class="link" href="https://github.com/sathvik-BR/movie-recommendation-system" target="_blank" rel="noopener">GitHub ↗</a>
     </article>
 
     <article class="card big rv" style="grid-template-columns:1fr 1fr;gap:34px;padding:34px">
       <div>
+        <div class="viz" aria-label="Illustration of a detection box around abandoned fishing net underwater">
+          <svg viewBox="0 0 400 180">
+            <defs><pattern id="m" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M0 0l14 14M14 0L0 14" stroke="#A8CBFF" stroke-opacity=".4" fill="none"/></pattern></defs>
+            <rect width="400" height="180" fill="#07101C"/>
+            <path class="o" d="M0 30q50-10 100 0t100 0 100 0 100 0M0 56q50-8 100 0t100 0 100 0 100 0" stroke-opacity=".18"/>
+            <path d="M0 150q100-30 200-12t200-8V180H0z" fill="#0F1520"/>
+            <path d="M110 100q40-30 90-24t80 30q-10 38-80 40t-90-46z" fill="url(#m)" stroke="#A8CBFF" stroke-opacity=".5"/>
+            <rect class="d" x="98" y="64" width="196" height="92" rx="3"/><text class="tw" x="100" y="58">ghost gear</text>
+          </svg>
+          <span class="cap">Custom YOLOv8 · illustration</span>
+        </div>
         <span class="tag">Solo build</span>
         <h3>Ghost fishing gear detection</h3>
         <p class="stack">Python · YOLOv8 · PyTorch · OpenCV · Google Colab</p>
@@ -296,8 +354,8 @@ footer{padding:36px 0 56px;text-align:center;font:400 12px var(--mono);color:#56
   <div class="head rv"><h2>The toolkit behind the work.</h2></div>
   <div class="skills rv">
     <div class="sk"><h3>AI &amp; ML</h3><div class="chips"><span>PyTorch</span><span>TensorFlow (basic)</span><span>DenseNet-121</span><span>YOLOv8</span><span>OpenCV</span><span>Scikit-learn</span><span>Grad-CAM</span><span>HuggingFace Transformers</span><span>Model training</span></div></div>
-    <div class="sk"><h3>NLP &amp; RAG</h3><div class="chips"><span>LangChain</span><span>FAISS</span><span>RAG pipelines</span><span>Cosine similarity</span><span>LLM integration</span><span>Prompt engineering</span></div></div>
-    <div class="sk"><h3>Backend &amp; data</h3><div class="chips"><span>Python</span><span>Flask</span><span>Flask-SocketIO</span><span>REST API design</span><span>Streamlit</span><span>SQLite</span><span>SQL (basics)</span></div></div>
+    <div class="sk"><h3>NLP &amp; RAG</h3><div class="chips"><span>LangChain</span><span>FAISS</span><span>RAG pipelines</span><span>TF-IDF</span><span>Cosine similarity</span><span>LLM integration</span><span>Prompt engineering</span></div></div>
+    <div class="sk"><h3>Backend &amp; data</h3><div class="chips"><span>Python</span><span>Pandas</span><span>Flask</span><span>Flask-SocketIO</span><span>REST API design</span><span>Streamlit</span><span>Plotly</span><span>SQLite</span><span>SQL (basics)</span></div></div>
     <div class="sk"><h3>Cloud &amp; tools</h3><div class="chips"><span>Oracle Cloud (OCI)</span><span>Groq API</span><span>HuggingFace Hub</span><span>Streamlit Cloud</span><span>Docker (basic)</span><span>Git &amp; GitHub</span><span>Power BI</span><span>pytest</span><span>Agile</span></div></div>
   </div>
 </div></section>
@@ -340,45 +398,19 @@ footer{padding:36px 0 56px;text-align:center;font:400 12px var(--mono);color:#56
 <div class="modal" id="modal"><div class="mbox"><button class="x" id="close" aria-label="Close résumé">✕</button><iframe src="Sathvik_BR_Resume.pdf" title="B R Sathvik résumé"></iframe></div></div>
 
 <script>
-// Grad-CAM cursor: moves the activation map inside the hero
 const hero=document.querySelector('.hero');
-hero.addEventListener('mousemove',e=>{
-  const r=hero.getBoundingClientRect();
-  hero.style.setProperty('--x',(e.clientX-r.left)+'px');
-  hero.style.setProperty('--y',(e.clientY-r.top)+'px');
-});
-// spotlight edge on cards
-document.querySelectorAll('.card').forEach(c=>c.addEventListener('mousemove',e=>{
-  const r=c.getBoundingClientRect();
-  c.style.setProperty('--mx',(e.clientX-r.left)+'px');
-  c.style.setProperty('--my',(e.clientY-r.top)+'px');
-}));
-// scroll progress
-addEventListener('scroll',()=>{
-  const h=document.documentElement;
-  document.getElementById('bar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
-});
-// reveal + count-up
-function count(el){
-  const t=parseFloat(el.dataset.n),s=el.dataset.s,f=t%1!==0,st=performance.now();
-  (function k(n){const p=Math.min((n-st)/1400,1),v=t*(1-Math.pow(1-p,3));
-    el.textContent=(f?v.toFixed(t<1?2:1):Math.floor(v).toLocaleString())+s;
-    if(p<1)requestAnimationFrame(k)})(st);
-}
-const io=new IntersectionObserver(es=>es.forEach(en=>{
-  if(!en.isIntersecting)return;
-  en.target.classList.add('in');
-  en.target.querySelectorAll('[data-n]').forEach(count);
-  io.unobserve(en.target);
-}),{threshold:.15});
+hero.addEventListener('mousemove',e=>{const r=hero.getBoundingClientRect();hero.style.setProperty('--x',(e.clientX-r.left)+'px');hero.style.setProperty('--y',(e.clientY-r.top)+'px')});
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
+addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('bar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'});
+function count(el){const t=parseFloat(el.dataset.n),s=el.dataset.s,f=t%1!==0,st=performance.now();
+  (function k(n){const p=Math.min((n-st)/1400,1),v=t*(1-Math.pow(1-p,3));el.textContent=(f?v.toFixed(t<1?2:1):Math.floor(v).toLocaleString())+s;if(p<1)requestAnimationFrame(k)})(st)}
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;en.target.classList.add('in');en.target.querySelectorAll('[data-n]').forEach(count);io.unobserve(en.target)}),{threshold:.15});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-// résumé modal
 const modal=document.getElementById('modal');
 document.querySelectorAll('.open-resume').forEach(b=>b.addEventListener('click',()=>modal.classList.add('open')));
 document.getElementById('close').onclick=()=>modal.classList.remove('open');
 modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
 addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
-// copy email
 const cp=document.getElementById('copy');
 cp.onclick=()=>navigator.clipboard.writeText('sathvikbumisetty@gmail.com').then(()=>{cp.textContent='Copied';setTimeout(()=>cp.textContent='Copy',1600)});
 </script>
