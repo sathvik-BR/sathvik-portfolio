@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+.env*
+*.onnx
+cutout.py
+index.html.bak
+__pycache__
+.vscode
